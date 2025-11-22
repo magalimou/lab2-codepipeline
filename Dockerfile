@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git unzip
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Instalar Composer
-COPY --from=public.ecr.aws/docker/library/composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=public.ecr.aws/composer/composer:latest /usr/bin/composer /usr/bin/composer
 
 # Copiar archivos de la aplicación
 COPY . /var/www/html/
